@@ -46,16 +46,16 @@ const fs=require('fs');
 
 // const quote="hi";
 
-// const[, , noOfFiles,quote]=process.argv;
-// console.log(process.argv)
-// for(let i=1;i<=noOfFiles;i++)
-// {
-//     fs.writeFile(`./backups/test-${i}.html`,quote,(err)=>{
-//         console.log("completed writing",i);
+const[, , noOfFiles,quote]=process.argv;
+console.log(process.argv)
+for(let i=1;i<=noOfFiles;i++)
+{
+    fs.writeFile(`./backups/test-${i}.html`,quote,(err)=>{
+        console.log("completed writing",i);
 
 
-//     });
-// }
+    });
+}
 
 
 
