@@ -46,4 +46,4 @@ async function getUserByName(username) {
     .findOne({ username:username });
 }
 
-export { getMovieById, getMovie, addMovie, deleteMovieById, editMovie, addUser,getUserByName};
+export { getMovieById, getMovie, addMovie, deleteMovieById, editMovie, addUser};

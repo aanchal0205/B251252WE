@@ -8,7 +8,7 @@ import dotenv from 'dotenv';
 import { getMovieById, getMovie, addMovie, deleteMovieById, editMovie } from "./helper.js";
 import { moviesRouter } from "./routes/movies.js";
 import cors from 'cors'; 
-import {usersRouter} from "./routes/users.js";
+import {usersRouter} from "./routes/users.js"
 
 
 dotenv.config();

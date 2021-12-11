@@ -43,7 +43,7 @@ async function getUserByName(username) {
   return await client
     .db("b252we")
     .collection("users")
-    .findOne({ username:username });
+    .findOne({ name:username });
 }
 
-export { getMovieById, getMovie, addMovie, deleteMovieById, editMovie, addUser,getUserByName};
+export { getMovieById, getMovie, addMovie, deleteMovieById, editMovie, addUser};

@@ -39,11 +39,11 @@ async function getMovieById(id) {
     .toArray();
 }
 
-async function getUserByName(username) {
+async function getUserByName(name) {
   return await client
     .db("b252we")
-    .collection("users")
-    .findOne({ username:username });
+    .collection("movies")
+    .findOne({ id: id });
 }
 
-export { getMovieById, getMovie, addMovie, deleteMovieById, editMovie, addUser,getUserByName};
+export { getMovieById, getMovie, addMovie, deleteMovieById, editMovie, addUser};

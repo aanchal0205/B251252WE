@@ -11,7 +11,7 @@ async function addUser(data) {
   return await client
     .db("b252we")
     .collection("users")
-    .insertOne(data);
+    .insertMany(data);
 }
 async function editMovie(id, data) {
   return await client
@@ -39,11 +39,4 @@ async function getMovieById(id) {
     .toArray();
 }
 
-async function getUserByName(username) {
-  return await client
-    .db("b252we")
-    .collection("users")
-    .findOne({ username:username });
-}
-
-export { getMovieById, getMovie, addMovie, deleteMovieById, editMovie, addUser,getUserByName};
+export { getMovieById, getMovie, addMovie, deleteMovieById, editMovie };
