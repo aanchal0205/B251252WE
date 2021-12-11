@@ -20,7 +20,7 @@ route("/signup").post(async (request, response) => {
     
     if(isUserExist)
     {
-        response.status(400).send({message: "user already exist"});
+        response.send({message: "user already exist"});
         return;
     }
 
