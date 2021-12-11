@@ -1,6 +1,5 @@
 import {client} from "./index.js";
 import { ObjectId } from "mongodb";
-import { ObjectID } from "bson";
 
 async function addMovie(data) {
   return await client
@@ -31,7 +30,7 @@ async function getMovieById(id) {
   return await client
     .db("b252we")
     .collection("movies")
-    .findOne({_id : ObjectID(id)});
+    .findOne({ _id: ObjectId(id) });
 }
  async function getMovie(filter) {
   return await client
