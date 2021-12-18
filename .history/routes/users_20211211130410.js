@@ -61,8 +61,8 @@ route("/login").post(async (request, response) => {
 
     if(isPasswordMatched)
     {
-          const token=  jwt.sign({id: user._id},process.env.SECRET_KEY)
-        response.send({message:"successfull login",token:token});
+            jwt.sign({id: user._id})
+        response.send({message:"successfull login"});
     }
     else
     {

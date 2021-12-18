@@ -1,6 +1,5 @@
 import express from "express"; 
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
 
 import { getMovieById, getMovie, addMovie, deleteMovieById, editMovie, addUser ,getUserByName} from "../helper.js";
 import { Collection } from "mongodb";
@@ -51,8 +50,7 @@ route("/login").post(async (request, response) => {
 
      if(!user)
      {
-            response.send({message: "Invalid Credentials "});
-            return;
+            response.send({message: "Invalid Credentials "})
      }
 
      const storedPassword = user.password;
@@ -61,8 +59,7 @@ route("/login").post(async (request, response) => {
 
     if(isPasswordMatched)
     {
-          const token=  jwt.sign({id: user._id},process.env.SECRET_KEY)
-        response.send({message:"successfull login",token:token});
+        response.send({message:"successfull login"});
     }
     else
     {

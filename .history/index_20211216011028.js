@@ -90,15 +90,9 @@ app.use("/movies", moviesRouter);
 
 // /users/signup
 app.use("/users", usersRouter);
-app.get("/recipes", async(request,response)=>
+app.get("/recipes", (request,response)=>
 {
-  const recipe=await client
-  .db("b252we")
-  .collection("recipes")
-  .find({})
-  .toArray();
-
-  response.send(recipe);
+  response.send(recipe)
 })
 
 app.post("/recipes",async(request,response)=>

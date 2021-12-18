@@ -90,22 +90,9 @@ app.use("/movies", moviesRouter);
 
 // /users/signup
 app.use("/users", usersRouter);
-app.get("/recipes", async(request,response)=>
+app.get('/recipes', (request,response)>
 {
-  const recipe=await client
-  .db("b252we")
-  .collection("recipes")
-  .find({})
-  .toArray();
-
-  response.send(recipe);
-})
-
-app.post("/recipes",async(request,response)=>
-{
-  const data=request.body;
-  const result=await client.db("b252we").collection("recipes").insertMany(data)
-  response.send(result)
+  response.send(recipe)
 })
 app.listen(PORT, () => console.log("running"));
 

@@ -90,18 +90,12 @@ app.use("/movies", moviesRouter);
 
 // /users/signup
 app.use("/users", usersRouter);
-app.get("/recipes", async(request,response)=>
-{
-  const recipe=await client
-  .db("b252we")
-  .collection("recipes")
-  .find({})
-  .toArray();
+// app.get("/recipes", (request,response)=>
+// {
+//   response.send(recipe)
+// })
 
-  response.send(recipe);
-})
-
-app.post("/recipes",async(request,response)=>
+app.post("/recipes",(request,response)=>
 {
   const data=request.body;
   const result=await client.db("b252we").collection("recipes").insertMany(data)

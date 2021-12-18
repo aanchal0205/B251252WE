@@ -44,7 +44,7 @@ route("/")
   
   
   })
-.post(auth,async (request, response) => {
+.post(async (request, response) => {
   
   
   
@@ -61,7 +61,7 @@ route("/")
 
   router.
 route("/:id")
-.get(auth,async (request, response) => {
+.get(async (request, response) => {
 
     console.log(request.params);
     const { id } = request.params;
@@ -73,7 +73,7 @@ route("/:id")
   
     movie ? response.send(movie) : response.send("not found");
   })
-  .delete(auth,async (request, response) => {
+  .delete(async (request, response) => {
   
     console.log(request.params);
     const { id } = request.params;
@@ -85,7 +85,7 @@ route("/:id")
   
     result ? response.send(result) : response.send("not found");
   })
-  .put(auth,async (request, response) => {
+  .put(async (request, response) => {
   
   
     const { id } = request.params;
